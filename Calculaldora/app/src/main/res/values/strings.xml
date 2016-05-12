@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Calculaldora</string>
+    <string name="numero1">Ingrese primero numero</string>
+    <string name="txtNumero2">Ingrese segundo numero</string>
+    <string name="btnSumar">Sumar</string>
+    <string name="btnRestar">Restar</string>
+    <string name="btnMultiplicar">Multiplicar</string>
+    <string name="btnDividir">Dividir</string>
+
+    <string name="mensaje">Ingrese los dos numero</string>
+
+</resources>

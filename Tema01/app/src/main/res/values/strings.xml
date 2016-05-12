@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tema01</string>
+    <string name="home">Home</string>
+    <string name="nombre">Ingrese Nombre</string>
+    <string name="edad">Ingrese Edad</string>
+    <string name="procesar">Procesar</string>
+</resources>
