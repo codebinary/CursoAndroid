@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EjercicioTema01</string>
+    <string name="nombre">Ingrese su nombre</string>
+    <string name="proceso">Procesar</string>
 </resources>
