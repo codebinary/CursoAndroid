@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="@dimen/margin_spinner"
+    android:layout_width="match_parent"
+    android:padding="@dimen/padding_spinner"
+    android:background="@android:color/darker_gray"
+    android:layout_height="wrap_content">
+
+</TextView>

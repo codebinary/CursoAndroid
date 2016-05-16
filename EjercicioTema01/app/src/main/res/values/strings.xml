@@ -2,4 +2,6 @@
     <string name="app_name">EjercicioTema01</string>
     <string name="nombre">Ingrese su nombre</string>
     <string name="proceso">Procesar</string>
+    <string name="edad">Ingrese su edad</string>
+    <string name="procesar">Procesar</string>
 </resources>

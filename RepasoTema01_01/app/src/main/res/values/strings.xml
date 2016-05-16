@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">RepasoTema01_01</string>
+    <string name="nombre">Ingrese su nombre</string>
+    <string name="edad">Ingrese su edad</string>
+    <string name="button">Procesar</string>
+</resources>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tema02</string>
+    <string name="nombre">Ingrese Nombre</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="mostrar">Mostrar</string>
+    <string name="mensaje">Los campos son obligatorios.</string>
+    <string name="enviar">Enivar</string>
+    <string name="atras">Atras</string>
+</resources>
