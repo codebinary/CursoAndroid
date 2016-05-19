@@ -1,4 +1,4 @@
-package com.james.codebinary.repasotema02;
+package com.james.codebinary.repasotema02_02;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private EditText nombre;
-    private Spinner estadoCivil;
+    private Spinner paises;
     private RadioButton masculino, femenino;
     private Button btnProcesar, btnEnviar;
     private TextView resultado;
@@ -26,70 +26,72 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         nombre = (EditText) findViewById(R.id.txtNombre);
-        estadoCivil = (Spinner) findViewById(R.id.spEstadoCivil);
-        femenino = (RadioButton) findViewById(R.id.rbFemenino);
+        paises = (Spinner) findViewById(R.id.spPais);
         masculino = (RadioButton) findViewById(R.id.rbMasculino);
-        btnEnviar = (Button) findViewById(R.id.btnEnviar);
+        femenino = (RadioButton) findViewById(R.id.rbFemenino);
         btnProcesar = (Button) findViewById(R.id.btnProcesar);
-        resultado = (TextView) findViewById(R.id.lblMostrar);
+        btnEnviar = (Button) findViewById(R.id.btnEnviar);
+        resultado = (TextView) findViewById(R.id.lblResultado);
+
 
 
         ArrayAdapter arrayAdapter = new ArrayAdapter(
                 getApplicationContext(),
                 R.layout.custom_spinner,
-                getResources().getStringArray(R.array.estadoCivil)
-        );
-
-        estadoCivil.setAdapter(arrayAdapter);
+                getResources().getStringArray(R.array.paises));
+        
+        paises.setAdapter(arrayAdapter);
 
     }
+
 
     @Override
     protected void onResume() {
         super.onResume();
-
-
+        
+        
         btnProcesar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                
                 String nom = nombre.getText().toString();
-                String estado = estadoCivil.getSelectedItem().toString();
+                String pais = paises.getSelectedItem().toString();
                 String gen = (masculino.isChecked() ? masculino.getText().toString() : (femenino.isChecked() ? femenino.getText().toString() : ""));
 
-                if(nom.length() > 0 && estado.length() > 0 && gen.length() > 0){
-                    
-                    resultado.setText(Html.fromHtml(nom) + " - " + estado + " - " + gen);
+
+                if (nom.length() > 0 && pais.length() > 0 && gen.length() > 0){
+
+                    resultado.setText(Html.fromHtml(nom) + " - " + pais + " - " + gen);
 
                 }else{
 
-                    Toast.makeText(MainActivity.this, getResources().getString(R.string.mensajeAlert), Toast.LENGTH_SHORT).show();
-                    
-                }
+                    Toast.makeText(MainActivity.this, getResources().getString(R.string.error), Toast.LENGTH_SHORT).show();
 
+                }
+                
             }
         });
+
 
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 String nom = nombre.getText().toString();
-                String esta = estadoCivil.getSelectedItem().toString();
+                String pais = paises.getSelectedItem().toString();
                 String gen = (masculino.isChecked() ? masculino.getText().toString() : (femenino.isChecked() ? femenino.getText().toString() : ""));
 
-                //Creamos la sentencia de envio o cambio de pantalla
-                Intent intent = new Intent(MainActivity.this, MostrarActivdad.class);
+                Intent intent = new Intent(getApplicationContext(), MostrarActivity.class);
 
                 intent.putExtra("nombre", nom);
-                intent.putExtra("estado", esta);
+                intent.putExtra("pais", pais);
                 intent.putExtra("genero", gen);
 
                 startActivity(intent);
 
             }
         });
-
     }
 }

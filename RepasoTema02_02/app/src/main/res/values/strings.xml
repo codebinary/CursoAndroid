@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RepasoTema02_02</string>
+    <string name="nombre">Ingrese su nombre</string>
+    <string name="rbMasculino">Masculino</string>
+    <string name="rbFemenino">Femenino</string>
+    <string name="btnProcesar">Procesar</string>
+    <string name="btnEnviar">Eniar</string>
+
+    <string name="error">Error al procesarr</string>
+    <string name="btnRegresar">Regresar</string>
+</resources>

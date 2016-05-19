@@ -30,7 +30,7 @@ public class MostrarActivity extends AppCompatActivity {
         atras = (Button) findViewById(R.id.btnAtras);
 
         //Validamos si llego el dato enviado de la pantalla anterior
-        if (getIntent().hasExtra("nombre")) {
+        if (getIntent().hasExtra("no    mbre")) {
             //Obtenemos los datos enviados desde la pantalla anterior
             String nom = getIntent().getStringExtra("nombre");
             //Toast.makeText(MostrarActivity.this, nom, Toast.LENGTH_SHORT).show();

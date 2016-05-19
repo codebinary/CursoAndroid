@@ -7,4 +7,5 @@
     <string name="enviar">Enviar</string>
 
     <string name="mensajeAlert">Ingrese los valores</string>
+    <string name="btnRegresar">Regresar</string>
 </resources>
