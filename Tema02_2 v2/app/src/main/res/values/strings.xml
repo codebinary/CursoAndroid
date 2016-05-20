@@ -1,9 +1,0 @@
-<resources>
-    <string name="app_name">Tema02_2</string>
-    <string name="empresa">Empresa</string>
-    <string name="ruc">RUC</string>
-    <string name="direccion">Dirección</string>
-    <string name="grabar">Grabar</string>
-
-    <string name="validacion">Ingrese todos los campos.</string>
-</resources>
