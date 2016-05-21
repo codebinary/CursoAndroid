@@ -14,7 +14,6 @@
     <EditText
         android:id="@+id/txtEmpresa"
         android:hint="@string/empresa"
-        android:textAllCaps="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -27,7 +26,6 @@
 
     <EditText
         android:id="@+id/txtDireccion"
-        android:textAllCaps="true"
         android:hint="@string/direccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -44,7 +42,7 @@
 
     <ListView
         android:id="@+id/lvLista"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"></ListView>
 
 </LinearLayout>
