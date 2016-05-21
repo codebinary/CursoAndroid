@@ -1,8 +1,11 @@
 package com.james.codebinary.repasotema02_2v1;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -67,11 +70,56 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     adapter.notifyDataSetChanged();
+                    limpiar();
 
                 }
 
             }
         });
+
+        listaview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                //Toast.makeText(MainActivity.this, "->"+position, Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder alerBuilder = new AlertDialog.Builder(MainActivity.this);
+                alerBuilder.setTitle("Mensaje");
+                alerBuilder.setCancelable(false);
+                alerBuilder.setMessage("¿Desea Eliminar el registro?");
+                alerBuilder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Toast.makeText(MainActivity.this, "OK", Toast.LENGTH_SHORT).show();
+                        lista.remove(position);
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+                alerBuilder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Toast.makeText(MainActivity.this, ":(", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                alerBuilder.setNeutralButton("Modificar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Empresa obj = lista.get(position);
+                        empresa.setText(obj.getEmpresa());
+                        ruc.setText(obj.getRuc());
+                        direccion.setText(obj.getDireccion());
+                        btnGrabar.setTag(position);
+                    }
+                });
+                alerBuilder.create().show();
+            }
+        });
+
+    }
+
+    public void limpiar(){
+        empresa.setText("");
+        ruc.setText("");
+        direccion.setText("");
+        empresa.requestFocus();
 
     }
 }

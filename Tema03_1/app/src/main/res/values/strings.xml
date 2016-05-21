@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Tema03_1</string>
+    <string name="welcome">Welcome</string>
+    <string name="subtitle">Log into Redbooth</string>
+    <string name="email">Email or Username</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="sign_google">Sign in with Google</string>
+    <string name="on_premise">On-Premise Login</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="guardar">Guardar</string>
+</resources>
