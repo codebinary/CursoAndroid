@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_margin"
+    tools:context="com.james.codebinary.radiobuttons.MainActivity">
+
+
+    <TextView
+        android:id="@+id/etiqueta_opciones_pago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:text="@string/opcionesPago"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+
+    <RadioGroup
+        android:id="@+id/opciones_pago"
+        android:layout_below="@+id/etiqueta_opciones_pago"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radio_deposito"
+            android:layout_marginRight="16dp"
+            android:checked="true"
+            android:text="@string/deposito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/radio_paypal"
+            android:checked="false"
+            android:text="@string/paypal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+    
+    
+    <Button
+        android:id="@+id/btnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/opciones_pago"
+        android:layout_centerHorizontal="true"
+        android:text="@string/boton"
+        android:onClick="comprobarModoPago"
+
+        />
+
+
+</RelativeLayout>

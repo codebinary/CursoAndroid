@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">RadioButtons</string>
+    <string name="masculino">Masculino</string>
+    <string name="femenino">Femenino</string>
+    <string name="opcionesPago">Opciones de pago:</string>
+    <string name="paypal">Paypal</string>
+    <string name="deposito">Deposito directo</string>
+    <string name="boton">Guardar</string>
+    <string name="tipoCliente">Tipo de Cliente</string>
+    <string name="particular">Particular</string>
+    <string name="corporativo">Corporativo</string>
+    <string name="representante">Represantante</string>
+    <string name="numEmpleados">Número de empleados</string>
+    <string name="razonSocial">Razón social</string>
+</resources>
