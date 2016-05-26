@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">RepasoTema02_v102</string>
-    <string name="empresa">Nombe de empresa</string>
-    <string name="ruc">Ingrese ruc</string>
-    <string name="direccion">Ingrese direccion</string>
-    <string name="grabar">Grabar</string>
-</resources>

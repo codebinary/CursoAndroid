@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">RepastoTema02_v102</string>
+    <string name="empresa">Ingrese su empresa</string>
+    <string name="ruc">Ingrese su ruc</string>
+    <string name="direccion">Ingrese su direccion</string>
+    <string name="guardar">Guardar</string>
+</resources>
