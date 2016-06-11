@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Service Out</string>
+    <string name="memoria">Memoria</string>
+    <string name="button1">New ToggleButton</string>
+</resources>

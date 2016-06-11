@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Tema4_3</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="celular">Celular</string>
+    <string name="numCasa">Teléfono casa</string>
+    <string name="registrar">Registrar</string>
+</resources>
