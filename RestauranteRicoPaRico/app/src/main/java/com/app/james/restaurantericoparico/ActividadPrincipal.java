@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.app.james.restaurantericoparico.fragments.FragmentoCuenta;
 import com.app.james.restaurantericoparico.fragments.FragmentoInicio;
 
 public class ActividadPrincipal extends AppCompatActivity {
@@ -75,7 +76,7 @@ public class ActividadPrincipal extends AppCompatActivity {
                 fragmentoGenerico = new FragmentoInicio();
                 break;
             case R.id.item_cuenta:
-                //fragmentoGenerico = new FragmentoCuenta();
+                fragmentoGenerico = new FragmentoCuenta();
                 break;
             case R.id.item_categorias:
                 //fragmentoGenerico = new FragmentoCategorias();

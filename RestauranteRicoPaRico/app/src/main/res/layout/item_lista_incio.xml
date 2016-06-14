@@ -6,20 +6,7 @@
         android:id="@+id/miniatura_comida"
         android:layout_width="match_parent"
         android:layout_height="@dimen/altura_miniatura_comida"
-        android:scaleType="centerCrop"
-        android:background="@color/primaryColor"/>
-
-    <TextView
-        android:id="@+id/nombre_comida"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left|bottom"
-        android:paddingBottom="16dp"
-        android:paddingLeft="16dp"
-        android:text="Medium Text"
-        android:background="@color/primaryColor"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        android:textColor="@android:color/white" />
+        android:scaleType="centerCrop" />
 
     <TextView
         android:id="@+id/precio_comida"
@@ -29,8 +16,18 @@
         android:layout_marginBottom="32dp"
         android:paddingLeft="@dimen/espacio_norma_1"
         android:text="Large Text"
-        android:background="@android:color/black"
         android:textColor="@android:color/white"
         android:textSize="48sp"
         android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/nombre_comida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:text="Medium Text"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@android:color/white" />
 </FrameLayout>

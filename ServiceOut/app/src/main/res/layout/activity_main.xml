@@ -1,14 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.app.james.serviceout.MainActivity">
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/topPanel"
@@ -25,9 +20,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:fontFamily="sans-serif-thin"
-            android:text="@string/memoria"
+            android:text="Memoria"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/metric_size"/>
+            android:textSize="@dimen/metric_size" />
 
         <ToggleButton
             android:id="@+id/toggleButton"
@@ -36,13 +31,14 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="24dp"
             android:background="@color/yellowFlatShadow"
-            android:text="@string/button1"
+            android:text="New ToggleButton"
             android:textOff="INICIAR SERVICE"
-            android:textOn="DETENER SERVICE"/>
+            android:textOn="DETENER SERVICE" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/bottomPanel"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="50"
@@ -58,7 +54,7 @@
             android:fontFamily="sans-serif-thin"
             android:text="Progreso"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/metric_size"/>
+            android:textSize="@dimen/metric_size" />
 
         <Button
             android:id="@+id/turn_intent_service"
@@ -67,7 +63,6 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/blueFlatShadow"
             android:onClick="onClickTurnIntentService"
-            android:text="INICIAR INTENT SERVICE"/>
-
+            android:text="INICIAR INTENT SERVICE" />
     </LinearLayout>
 </LinearLayout>
