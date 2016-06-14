@@ -1,9 +1,5 @@
 package com.app.james.restaurantericoparico.fragments;
 
-/**
- * Created by codebinary on 13/06/16.
- */
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,18 +17,19 @@ import com.app.james.restaurantericoparico.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.zip.Inflater;
 
 /**
- * Fragmento de la sección "Mi Cuenta"
+ * Created by James on 14/06/16.
  */
-public class FragmentoCuenta extends Fragment {
+public class FragmentoCategorias extends Fragment {
 
     private AppBarLayout appBar;
     private TabLayout pestanas;
 
     private ViewPager viewPager;
 
-    public FragmentoCuenta(){
+    public FragmentoCategorias(){
     }
 
     @Nullable
@@ -43,22 +40,11 @@ public class FragmentoCuenta extends Fragment {
 
         if(savedInstanceState == null){
             insertarTabs(container);
-
-            // Setear adaptador al viewpager.
-            viewPager = (ViewPager) view.findViewById(R.id.pager);
-            poblarViewPager(viewPager);
-            pestanas.setupWithViewPager(viewPager);
         }
         return view;
     }
 
-    private void poblarViewPager(ViewPager viewPager) {
-        AdaptadorSecciones adapter = new AdaptadorSecciones(getFragmentManager());
-        adapter.addFragment(new FragmentoPerfil(), getString(R.string.titulo_tab_perfil));
-        adapter.addFragment(new FragmentoDirecciones(), getString(R.string.titulo_tab_direcciones));
-        adapter.addFragment(new FragmentoTarjetas(), getString(R.string.titulo_tab_tarjetas));
-        viewPager.setAdapter(adapter);
-    }
+
 
     private void insertarTabs(ViewGroup container) {
         View padre = (View) container.getParent();
