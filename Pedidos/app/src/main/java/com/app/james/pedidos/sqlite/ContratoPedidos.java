@@ -1,9 +1,5 @@
 package com.app.james.pedidos.sqlite;
 
-/**
- * Created by James on 14/06/16.
- */
-
 import java.util.UUID;
 
 /**
@@ -11,7 +7,7 @@ import java.util.UUID;
  */
 public class ContratoPedidos {
 
-    interface ColumnasCabeceraPedido{
+    interface ColumnasCabeceraPedido {
         String ID = "id";
         String FECHA = "fecha";
         String ID_CLIENTE = "id_cliente";
@@ -45,8 +41,8 @@ public class ContratoPedidos {
         String NOMBRE = "nombre";
     }
 
-    public static class CabecerasPedido implements ColumnasCabeceraPedido{
-        public static String generarIdCabeceraPedidoString(){
+    public static class CabecerasPedido implements ColumnasCabeceraPedido {
+        public static String generarIdCabeceraPedido() {
             return "CP-" + UUID.randomUUID().toString();
         }
     }
@@ -73,6 +69,8 @@ public class ContratoPedidos {
         }
     }
 
+
     private ContratoPedidos() {
     }
+
 }

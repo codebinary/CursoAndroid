@@ -6,22 +6,24 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 import android.provider.BaseColumns;
 
-/**
- * Created by James on 14/06/16.
- */
+import com.app.james.pedidos.sqlite.ContratoPedidos.CabecerasPedido;
+import com.app.james.pedidos.sqlite.ContratoPedidos.DetallesPedido;
+import com.app.james.pedidos.sqlite.ContratoPedidos.Productos;
+import com.app.james.pedidos.sqlite.ContratoPedidos.Clientes;
+import com.app.james.pedidos.sqlite.ContratoPedidos.FormasPago;
 
 /**
  * Clase que administra la conexión de la base de datos y su estructuración
  */
 public class BaseDatosPedidos extends SQLiteOpenHelper {
 
-    private static  final String NOMBRE_BASE_DATOS = "pedidos.db";
+    private static final String NOMBRE_BASE_DATOS = "pedidos.db";
 
     private static final int VERSION_ACTUAL = 1;
 
-    private final Context context;
+    private final Context contexto;
 
-    interface Tablas{
+    interface Tablas {
         String CABECERA_PEDIDO = "cabecera_pedido";
         String DETALLE_PEDIDO = "detalle_pedido";
         String PRODUCTO = "producto";
@@ -30,9 +32,9 @@ public class BaseDatosPedidos extends SQLiteOpenHelper {
     }
 
     interface Referencias {
+
         String ID_CABECERA_PEDIDO = String.format("REFERENCES %s(%s) ON DELETE CASCADE",
-                Tablas.CABECERA_PEDIDO, ContratoPedidos.CabecerasPedido.ID
-                );
+                Tablas.CABECERA_PEDIDO, ContratoPedidos.CabecerasPedido.ID);
 
         String ID_PRODUCTO = String.format("REFERENCES %s(%s)",
                 Tablas.PRODUCTO, ContratoPedidos.Productos.ID);
@@ -42,12 +44,11 @@ public class BaseDatosPedidos extends SQLiteOpenHelper {
 
         String ID_FORMA_PAGO = String.format("REFERENCES %s(%s)",
                 Tablas.FORMA_PAGO, ContratoPedidos.FormasPago.ID);
-
     }
 
-    public BaseDatosPedidos(Context context) {
-        super(context, NOMBRE_BASE_DATOS, null, VERSION_ACTUAL);
-        this.context = context;
+    public BaseDatosPedidos(Context contexto) {
+        super(contexto, NOMBRE_BASE_DATOS, null, VERSION_ACTUAL);
+        this.contexto = contexto;
     }
 
     @Override
@@ -98,6 +99,7 @@ public class BaseDatosPedidos extends SQLiteOpenHelper {
                         "%s TEXT NOT NULL UNIQUE,%s TEXT NOT NULL )",
                 Tablas.FORMA_PAGO, BaseColumns._ID,
                 ContratoPedidos.FormasPago.ID, ContratoPedidos.FormasPago.NOMBRE));
+
     }
 
     @Override
@@ -111,4 +113,6 @@ public class BaseDatosPedidos extends SQLiteOpenHelper {
 
         onCreate(db);
     }
+
+
 }
