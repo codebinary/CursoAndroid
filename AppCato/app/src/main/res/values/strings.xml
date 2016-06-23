@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AppCato</string>
+
+    <string name="home">INICIO</string>
+    <string name="novedades">NOVEDADES</string>
+    <string name="calendario">CALENDARIO</string>
+    <string name="programacion">PROGRAMACIÓN</string>
+    <string name="homenaje">HOMENAJE</string>
+    <string name="paises">PAISES</string>
+    <string name="videos">VIDEOS</string>
+</resources>

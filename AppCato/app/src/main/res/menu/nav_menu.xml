@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:checked="true"
+            android:icon="@drawable/ic_home"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/nav_novedades"
+            android:checked="true"
+            android:icon="@drawable/ic_file_document"
+            android:title="@string/novedades"
+            />
+
+        <item
+            android:id="@+id/nav_calendario"
+            android:checked="true"
+            android:icon="@drawable/calendario"
+            android:title="@string/calendario" />
+
+        <item
+            android:id="@+id/nav_programacion"
+            android:checked="true"
+            android:icon="@drawable/movie_film"
+            android:title="@string/programacion" />
+
+        <item
+            android:id="@+id/nav_homenaje"
+            android:checked="true"
+            android:icon="@drawable/movie_film"
+            android:title="@string/homenaje" />
+
+        <item
+            android:id="@+id/nav_paises"
+            android:checked="true"
+            android:icon="@drawable/movie_film"
+            android:title="@string/paises" />
+
+        <item
+            android:id="@+id/nav_videos"
+            android:checked="true"
+            android:icon="@drawable/movie_film"
+            android:title="@string/videos" />
+
+    </group>
+
+</menu>
