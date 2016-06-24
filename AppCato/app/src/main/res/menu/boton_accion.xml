@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:appcato="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_buscar"
+        android:icon="@drawable/busqueda"
+        android:title="@string/busqueda"
+        appcato:showAsAction="ifRoom"/>
+</menu>

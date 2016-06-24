@@ -92,7 +92,7 @@ public class ActividadPrincipal extends AppCompatActivity {
                     .commit();
         }
 
-        // Setear título actual
+        // Setear título actual en el toolbar
         setTitle(itemDrawer.getTitle());
     }
 
