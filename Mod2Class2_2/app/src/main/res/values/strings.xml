@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mod2Class2_2</string>
+    <string name="grabar">Grabar</string>
+    <string name="obtener">Obtener</string>
+    <string name="titulo">Titulo</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="eliminar_opcion">Eliminar Opción</string>
+</resources>
