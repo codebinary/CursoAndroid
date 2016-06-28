@@ -18,6 +18,7 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.app.james.volley.R;
+import com.app.james.volley.controllers.MySocialMediaSingleton;
 import com.app.james.volley.models.Post;
 
 import org.json.JSONArray;
@@ -34,7 +35,7 @@ import java.util.List;
 public class PostAdapter extends ArrayAdapter {
 
     // Atributos
-    private RequestQueue requestQueue;
+    //private RequestQueue requestQueue;
     JsonObjectRequest jsArrayRequest;
 
     private static final String URL_BASE = "http://servidorexterno.site90.com/datos";
@@ -47,7 +48,7 @@ public class PostAdapter extends ArrayAdapter {
         super(context, 0);
 
         //Crear nuevo cola de peticiones
-        requestQueue = Volley.newRequestQueue(context);
+        //requestQueue = Volley.newRequestQueue(context);
 
         //Nuevo peticion JSONObject
         jsArrayRequest = new JsonObjectRequest(
@@ -57,6 +58,7 @@ public class PostAdapter extends ArrayAdapter {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        Log.d(TAG, "Respuesta Volley:" + response.toString());
                         items = parseJson(response);
                         notifyDataSetChanged();
                     }
@@ -70,7 +72,8 @@ public class PostAdapter extends ArrayAdapter {
         );
 
         //Añadir petición a la cola
-        requestQueue.add(jsArrayRequest);
+        MySocialMediaSingleton.getInstance(getContext()).addToRequestQueue(jsArrayRequest);
+
     }
 
     @Override
@@ -122,7 +125,8 @@ public class PostAdapter extends ArrayAdapter {
                 });
 
         // Añadir petición a la cola
-        requestQueue.add(request);
+        MySocialMediaSingleton.getInstance(getContext()).addToRequestQueue(jsArrayRequest);
+
 
         return listItemView;
     }
