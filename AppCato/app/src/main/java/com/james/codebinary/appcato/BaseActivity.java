@@ -3,6 +3,8 @@ package com.james.codebinary.appcato;
 import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 import butterknife.ButterKnife;
 
 /**
@@ -15,5 +17,6 @@ public class BaseActivity extends AppCompatActivity {
         super.setContentView(layoutResID);
 
         ButterKnife.bind(this);
+        Fresco.initialize(this);
     }
 }

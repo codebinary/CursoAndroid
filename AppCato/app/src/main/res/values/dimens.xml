@@ -4,5 +4,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
 
+    <dimen name="item_fragmento_padding_height">20dp</dimen>
+    <dimen name="item_descripcion">8dp</dimen>
+
 
 </resources>
