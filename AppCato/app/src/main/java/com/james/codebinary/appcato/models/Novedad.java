@@ -64,4 +64,15 @@ public class Novedad {
     public void setPost_date(String post_date) {
         this.post_date = post_date;
     }
+
+    @Override
+    public String toString() {
+        return "Novedad{" +
+                "post_id=" + post_id +
+                ", post_title='" + post_title + '\'' +
+                ", post_thumbnail='" + post_thumbnail + '\'' +
+                ", post_excerpt='" + post_excerpt + '\'' +
+                ", post_date='" + post_date + '\'' +
+                '}';
+    }
 }

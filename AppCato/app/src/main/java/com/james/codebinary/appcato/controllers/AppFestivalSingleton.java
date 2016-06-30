@@ -13,7 +13,7 @@ import com.android.volley.toolbox.Volley;
 /**
  * Patrón singleton para Volley
  */
-public class AppFestivalSingleton {
+public final class AppFestivalSingleton {
     //Atributos
     private static AppFestivalSingleton festivalSingleton;
     private RequestQueue requestQueue;
@@ -24,7 +24,7 @@ public class AppFestivalSingleton {
         requestQueue = getRequestQueue();
     }
 
-    private static synchronized AppFestivalSingleton getInstance(Context context){
+    public static synchronized AppFestivalSingleton getInstance(Context context){
         if(festivalSingleton == null){
             festivalSingleton = new AppFestivalSingleton(context);
         }
