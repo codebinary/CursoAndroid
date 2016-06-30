@@ -6,10 +6,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,7 +15,7 @@ import android.view.MenuItem;
 import com.james.codebinary.appcato.fragmentos.FragmentoCalendario;
 import com.james.codebinary.appcato.fragmentos.FragmentoHomenaje;
 import com.james.codebinary.appcato.fragmentos.FragmentoInicio;
-import com.james.codebinary.appcato.fragmentos.FragmentoNovedades;
+import com.james.codebinary.appcato.fragmentos.FragmentoNovedad;
 import com.james.codebinary.appcato.fragmentos.FragmentoPaises;
 import com.james.codebinary.appcato.fragmentos.FragmentoProgramacion;
 import com.james.codebinary.appcato.fragmentos.FragmentoVideos;
@@ -84,7 +82,7 @@ public class MainActivity extends BaseActivity {
                 fragmentoGenerico = new FragmentoInicio();
                 break;
             case R.id.nav_novedades:
-                fragmentoGenerico = new FragmentoNovedades();
+                fragmentoGenerico = new FragmentoNovedad();
                 break;
             case R.id.nav_calendario:
                 fragmentoGenerico = new FragmentoCalendario();
