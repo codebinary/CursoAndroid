@@ -11,12 +11,16 @@ import com.bumptech.glide.Glide;
 import com.app.james.restaurantericoparico.R;
 import com.app.james.restaurantericoparico.models.Comida;
 
-/**
- * Adaptador para mostrar las comidas más pedidas en la sección "Inicio"
- */
-public class AdaptadorInicio
-        extends RecyclerView.Adapter<AdaptadorInicio.ViewHolder> {
+import java.util.List;
 
+/**
+ * Adaptador para comidas usadas en la sección "Categorías"
+ */
+public class AdaptadorCategorias
+        extends RecyclerView.Adapter<AdaptadorCategorias.ViewHolder> {
+
+
+    private final List<Comida> items;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // Campos respectivos de un item
@@ -26,30 +30,33 @@ public class AdaptadorInicio
 
         public ViewHolder(View v) {
             super(v);
+
             nombre = (TextView) v.findViewById(R.id.nombre_comida);
             precio = (TextView) v.findViewById(R.id.precio_comida);
             imagen = (ImageView) v.findViewById(R.id.miniatura_comida);
         }
     }
 
-    public AdaptadorInicio() {
+
+    public AdaptadorCategorias(List<Comida> items) {
+        this.items = items;
     }
 
     @Override
     public int getItemCount() {
-        return Comida.COMIDAS_POPULARES.size();
+        return items.size();
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.item_lista_inicio, viewGroup, false);
+                .inflate(R.layout.item_lista_categorias, viewGroup, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        Comida item = Comida.COMIDAS_POPULARES.get(i);
+        Comida item = items.get(i);
 
         Glide.with(viewHolder.itemView.getContext())
                 .load(item.getIdDrawable())

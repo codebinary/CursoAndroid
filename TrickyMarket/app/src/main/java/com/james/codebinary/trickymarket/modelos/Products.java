@@ -3,17 +3,19 @@ package com.james.codebinary.trickymarket.modelos;
 import com.james.codebinary.trickymarket.R;
 
 /**
- * Created by codebinary on 12/06/16.
+ * Datos de prueba para las pestañas
  */
 public class Products {
 
     private static Product[] telefonos = {
-            new Product("Hisense HS-U98",
+            new Product(
+                    "Hisense HS-U98",
                     " 4Gb ROM, 1GB RAM, Camara 8Mpx.",
                     "$167 USD",
                     3.1f,
                     R.drawable.smartphone_hisense_hs_u98),
-            new Product("DarkFull",
+            new Product(
+                    "DarkFull",
                     " 16Gb ROM, 2GB RAM, Camara 13Mpx.",
                     "$295 USD",
                     4.0f,
@@ -51,6 +53,7 @@ public class Products {
                     "$203.9 USD",
                     2.8f,
                     R.drawable.smartphone_hisense_hs_u980)
+
     };
 
     private static Product[] tablets = {
@@ -149,15 +152,15 @@ public class Products {
                     R.drawable.portatil_gigabyte_aorus_x3_plus_v3)
     };
 
-    public static Product[] getTelefonos(){
+    public static Product[] getTelefonos() {
         return telefonos;
     }
 
-    public static Product[] getTablets(){
+    public static Product[] getTablets() {
         return tablets;
     }
 
-    public static Product[] getPortatiles(){
+    public static Product[] getPortatiles() {
         return portatiles;
     }
 }

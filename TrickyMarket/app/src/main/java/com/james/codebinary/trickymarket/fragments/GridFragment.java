@@ -53,7 +53,7 @@ public class GridFragment extends Fragment{
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
         //Obtencion del grid view
-        GridViewWithHeaderAndFooter grid = (GridViewWithHeaderAndFooter) rootView.findViewById(R.id.gridView);
+        GridViewWithHeaderAndFooter grid = (GridViewWithHeaderAndFooter) rootView.findViewById(R.id.gridview);
 
         //Inicializar el grid
         setUpGridView(grid);
@@ -103,7 +103,7 @@ public class GridFragment extends Fragment{
 
         // Seteando Imagen
         ImageView image = (ImageView) view.findViewById(R.id.imagen);
-        Glide.with(image.getContext()).load(item.getIdThumbail()).into(image);
+        Glide.with(image.getContext()).load(item.getIdThumbnail()).into(image);
 
         // Seteando Nombre
         TextView name = (TextView) view.findViewById(R.id.nombre);

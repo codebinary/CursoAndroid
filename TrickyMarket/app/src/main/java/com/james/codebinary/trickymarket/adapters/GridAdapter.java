@@ -14,25 +14,26 @@ import com.james.codebinary.trickymarket.R;
 import com.james.codebinary.trickymarket.modelos.Product;
 
 /**
- * Created by codebinary on 12/06/16.
+ * {@link BaseAdapter} personalizado para el gridview
  */
 public class GridAdapter extends BaseAdapter {
 
-    private final Context context;
+    private final Context mContext;
     private final Product[] items;
 
-    public GridAdapter(Context context, Product[] items) {
-        this.context = context;
+    public GridAdapter(Context c, Product[] items) {
+        mContext = c;
         this.items = items;
     }
 
     @Override
     public int getCount() {
+        // Decremento en 1, para no contar el header view
         return items.length - 1;
     }
 
     @Override
-    public Object getItem(int position) {
+    public Product getItem(int position) {
         return items[position];
     }
 
@@ -41,36 +42,38 @@ public class GridAdapter extends BaseAdapter {
         return 0;
     }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
 
-        if(convertView == null){
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.grid_item, parent, false);
+    @Override
+    public View getView(int position, View view, ViewGroup viewGroup) {
+
+        if (view == null) {
+            LayoutInflater inflater = (LayoutInflater) mContext
+                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            view = inflater.inflate(R.layout.grid_item, viewGroup, false);
         }
 
-        Product item = (Product) getItem(position);
+        Product item = getItem(position);
 
-        //Seteando imagen
-        ImageView image = (ImageView) convertView.findViewById(R.id.imagen);
-        Glide.with(image.getContext()).load(item.getIdThumbail()).into(image);
+        // Seteando Imagen
+        ImageView image = (ImageView) view.findViewById(R.id.imagen);
+        Glide.with(image.getContext()).load(item.getIdThumbnail()).into(image);
 
-        //Seteando nombre
-        TextView name = (TextView) convertView.findViewById(R.id.nombre);
+        // Seteando Nombre
+        TextView name = (TextView) view.findViewById(R.id.nombre);
         name.setText(item.getNombre());
 
-        //Seteando Descripcion
-        TextView descripcion = (TextView) convertView.findViewById(R.id.descripcion);
+        // Seteando Descripción
+        TextView descripcion = (TextView) view.findViewById(R.id.descripcion);
         descripcion.setText(item.getDescripcion());
 
-        //Setenado Precio
-        TextView precio = (TextView) convertView.findViewById(R.id.precio);
+        // Seteando Precio
+        TextView precio = (TextView) view.findViewById(R.id.precio);
         precio.setText(item.getPrecio());
 
-        //Seteando rating
-        RatingBar ratingBar = (RatingBar) convertView.findViewById(R.id.rating);
+        // Seteando Rating
+        RatingBar ratingBar = (RatingBar) view.findViewById(R.id.rating);
         ratingBar.setRating(item.getRating());
 
-        return convertView;
+        return view;
     }
 }

@@ -1,9 +1,5 @@
 package com.app.james.restaurantericoparico.fragments;
 
-/**
- * Created by codebinary on 13/06/16.
- */
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,7 +11,7 @@ import com.app.james.restaurantericoparico.R;
 /**
  * Fragmento para la pestaña "PERFIL" De la sección "Mi Cuenta"
  */
-public class FragmentoPerfil extends Fragment{
+public class FragmentoPerfil extends Fragment {
 
     public FragmentoPerfil() {
     }

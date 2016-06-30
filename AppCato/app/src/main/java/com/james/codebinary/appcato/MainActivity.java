@@ -16,7 +16,7 @@ import com.james.codebinary.appcato.fragmentos.FragmentoCalendario;
 import com.james.codebinary.appcato.fragmentos.FragmentoHomenaje;
 import com.james.codebinary.appcato.fragmentos.FragmentoInicio;
 import com.james.codebinary.appcato.fragmentos.FragmentoNovedad;
-import com.james.codebinary.appcato.fragmentos.FragmentoPaises;
+import com.james.codebinary.appcato.fragmentos.FragmentoPais;
 import com.james.codebinary.appcato.fragmentos.FragmentoProgramacion;
 import com.james.codebinary.appcato.fragmentos.FragmentoVideos;
 
@@ -94,7 +94,7 @@ public class MainActivity extends BaseActivity {
                 fragmentoGenerico = new FragmentoHomenaje();
                 break;
             case R.id.nav_paises:
-                fragmentoGenerico = new FragmentoPaises();
+                fragmentoGenerico = new FragmentoPais();
                 break;
             case R.id.nav_videos:
                 fragmentoGenerico = new FragmentoVideos();

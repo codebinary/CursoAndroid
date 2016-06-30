@@ -11,7 +11,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 
 /**
- * Created by codebinary on 12/06/16.
+ * Drawable con un contador flotante
  */
 public class BadgeDrawable extends Drawable {
 
@@ -22,7 +22,6 @@ public class BadgeDrawable extends Drawable {
 
     private String mCount = "";
     private boolean mWillDraw = false;
-
 
     public BadgeDrawable(Context context) {
         mTextSize = context.getResources().getDimension(R.dimen.badge_text_size);
@@ -76,15 +75,14 @@ public class BadgeDrawable extends Drawable {
         invalidateSelf();
     }
 
-
     @Override
     public void setAlpha(int alpha) {
-
+        // do nothing
     }
 
     @Override
-    public void setColorFilter(ColorFilter colorFilter) {
-
+    public void setColorFilter(ColorFilter cf) {
+        // do nothing
     }
 
     @Override

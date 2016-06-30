@@ -1,5 +1,7 @@
 package com.app.james.restaurantericoparico;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -7,28 +9,24 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.app.james.restaurantericoparico.R;
+import com.app.james.restaurantericoparico.fragments.FragmentoCategorias;
 import com.app.james.restaurantericoparico.fragments.FragmentoCuenta;
 import com.app.james.restaurantericoparico.fragments.FragmentoInicio;
 
 public class ActividadPrincipal extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
-    Toolbar toolbar;
-
-    NavigationView navigationView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actividad_principal);
 
-        //Agregamos el toolbar
         agregarToolbar();
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -79,10 +77,10 @@ public class ActividadPrincipal extends AppCompatActivity {
                 fragmentoGenerico = new FragmentoCuenta();
                 break;
             case R.id.item_categorias:
-                //fragmentoGenerico = new FragmentoCategorias();
+                fragmentoGenerico = new FragmentoCategorias();
                 break;
             case R.id.item_configuracion:
-                //startActivity(new Intent(this, ActividadConfiguracion.class));
+                startActivity(new Intent(this, ActividadConfiguracion.class));
                 break;
         }
         if (fragmentoGenerico != null) {
@@ -92,7 +90,7 @@ public class ActividadPrincipal extends AppCompatActivity {
                     .commit();
         }
 
-        // Setear título actual en el toolbar
+        // Setear título actual
         setTitle(itemDrawer.getTitle());
     }
 

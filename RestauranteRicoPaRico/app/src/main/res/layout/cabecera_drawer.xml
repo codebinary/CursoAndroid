@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/primaryColor"
     android:gravity="bottom"
+    android:orientation="vertical"
     android:padding="@dimen/padding_izquierdo_cabecera"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
@@ -14,7 +14,7 @@
         android:id="@+id/imageView3"
         android:layout_width="@dimen/ancho_logo"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/logo" />
 
     <TableLayout
         android:layout_width="match_parent"
@@ -24,14 +24,15 @@
         android:orientation="vertical"
         android:rowCount="2">
 
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/icono_carrito"
-                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="8dp"
                 android:src="@drawable/carrito_compras" />
 
@@ -43,6 +44,7 @@
                 android:text="@string/etiqueta_carrito"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textStyle="bold" />
+
         </TableRow>
 
         <TableRow
@@ -61,5 +63,4 @@
         </TableRow>
 
     </TableLayout>
-
 </LinearLayout>
