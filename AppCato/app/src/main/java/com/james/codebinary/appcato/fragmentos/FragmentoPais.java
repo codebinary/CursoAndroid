@@ -114,9 +114,7 @@ public class FragmentoPais extends Fragment {
             requestQueue.add(request);
 
         }
-
-
-
+        
         //Retornamos la vista
         return view;
     }
@@ -143,6 +141,7 @@ public class FragmentoPais extends Fragment {
                         fragmentTransaction.addToBackStack(null);
 
                         fragmentTransaction.commit();
+
 
                         break;
                 }

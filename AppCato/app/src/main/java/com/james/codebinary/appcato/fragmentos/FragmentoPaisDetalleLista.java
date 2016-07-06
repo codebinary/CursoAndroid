@@ -15,6 +15,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.james.codebinary.appcato.R;
+import com.james.codebinary.appcato.Util.Util;
 import com.james.codebinary.appcato.adapters.PaisAdapters;
 import com.james.codebinary.appcato.adapters.PaisDetalleListaAdapters;
 import com.james.codebinary.appcato.controllers.AppFestivalSingleton;
@@ -25,6 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +38,9 @@ import butterknife.ButterKnife;
  */
 public class FragmentoPaisDetalleLista extends Fragment {
 
-    private static final String URL_BASE_PELICULAS = "http://www.festivaldelima.com/2015/api/index.php/list_movies/null/null/9/null/null";
+    //private static final String URL_BASE_PELICULAS = "list_movies/null/null/9/null/null";
+    private int idPais;
+
     private List<Pelicula> peliculaList = new ArrayList<>();
 
     @BindView(R.id.listRecyclerDetallePais)
@@ -66,7 +70,7 @@ public class FragmentoPaisDetalleLista extends Fragment {
 
             //Realizamos la peticion con volley
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,
-                    URL_BASE_PELICULAS,
+                    Util.URL_BASE + Util.URL_LIST_MOVIES + Util.URL_PARAM_SECCIONES + 9 + Util.URL_PARAM_SEDES + Util.URL_PARAM_TITLE,
                     null,
                     new Response.Listener<JSONObject>() {
                         @Override
