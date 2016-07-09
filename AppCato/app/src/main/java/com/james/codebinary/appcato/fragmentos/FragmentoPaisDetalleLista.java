@@ -1,5 +1,6 @@
 package com.james.codebinary.appcato.fragmentos;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -39,7 +40,9 @@ import butterknife.ButterKnife;
 public class FragmentoPaisDetalleLista extends Fragment {
 
     //private static final String URL_BASE_PELICULAS = "list_movies/null/null/9/null/null";
-    private int idPais;
+
+    public Context context;
+
 
     private List<Pelicula> peliculaList = new ArrayList<>();
 
@@ -49,10 +52,19 @@ public class FragmentoPaisDetalleLista extends Fragment {
     private LinearLayoutManager linearLayoutManager;
     private PaisDetalleListaAdapters adaptador;
 
+    public FragmentoPaisDetalleLista(){}
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragmento_detalle_pais, container, false);
+
+
+        //Parámetro recibido desde el otro fragmento con el id del pais
+        Bundle bundle = getArguments();
+        int paramIdPais = bundle.getInt("idPais");
+
 
         //Inicializamos ButterKnife
         ButterKnife.bind(this, view);
@@ -70,7 +82,7 @@ public class FragmentoPaisDetalleLista extends Fragment {
 
             //Realizamos la peticion con volley
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,
-                    Util.URL_BASE + Util.URL_LIST_MOVIES + Util.URL_PARAM_SECCIONES + 9 + Util.URL_PARAM_SEDES + Util.URL_PARAM_TITLE,
+                    Util.URL_BASE + Util.URL_LIST_MOVIES + "/" + Util.URL_PARAM_SECCIONES + "/" + Util.URL_PARAM_IDFECHAS +"/" + paramIdPais + "/" + Util.URL_PARAM_SEDES + "/" + Util.URL_PARAM_TITLE,
                     null,
                     new Response.Listener<JSONObject>() {
                         @Override
@@ -112,6 +124,7 @@ public class FragmentoPaisDetalleLista extends Fragment {
             AppFestivalSingleton.getInstance(getActivity().getApplicationContext()).addToRequestQueue(request);
             //requestQueue.add(request);
 
+            System.out.println("Paramaetro recibido " + paramIdPais);
         }
 
         return view;

@@ -128,14 +128,19 @@ public class FragmentoPais extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 int id_pais = paisList.get(position).getPais_id();
+                Bundle bundle = new Bundle();
+                bundle.putInt("idPais", id_pais);
+                FragmentoPaisDetalleLista fdl = new FragmentoPaisDetalleLista();
+                fdl.setArguments(bundle);
                 switch (id_pais){
                     case 9:case 11:case 432:case 433:case 434:case 435:case 436:case 438:case 439:case 440:
                     case 479:case 480:case 481:case 482:case 483:case 484:case 485:case 488:case 489:case 503:
                     case 504:case 505:case 506:case 507:case 508:case 509:case 510:case 511:case 512:case 513:
                     case 514:case 515:case 520:case 521:case 524:case 525:case 526:case 536:case 553:case 581:
+                        //fragmentoPaisDetalleLista.setArguments(bundle);
 
                         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.main_content, new FragmentoPaisDetalleLista());
+                        fragmentTransaction.replace(R.id.main_content, fdl);
 
                         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                         fragmentTransaction.addToBackStack(null);
