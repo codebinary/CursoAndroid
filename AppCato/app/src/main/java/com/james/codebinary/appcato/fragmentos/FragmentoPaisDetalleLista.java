@@ -17,17 +17,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.james.codebinary.appcato.R;
 import com.james.codebinary.appcato.Util.Util;
-import com.james.codebinary.appcato.adapters.PaisAdapters;
-import com.james.codebinary.appcato.adapters.PaisDetalleListaAdapters;
+import com.james.codebinary.appcato.adapters.PaisDetalleListaAdapter;
 import com.james.codebinary.appcato.controllers.AppFestivalSingleton;
-import com.james.codebinary.appcato.models.Pais;
 import com.james.codebinary.appcato.models.Pelicula;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,7 +47,7 @@ public class FragmentoPaisDetalleLista extends Fragment {
     RecyclerView recyclerView;
 
     private LinearLayoutManager linearLayoutManager;
-    private PaisDetalleListaAdapters adaptador;
+    private PaisDetalleListaAdapter adaptador;
 
     public FragmentoPaisDetalleLista(){}
 
@@ -74,7 +71,7 @@ public class FragmentoPaisDetalleLista extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         //Inicializamos el adaptador que recibe el contexto de la actividad y la lista
-        adaptador = new PaisDetalleListaAdapters(getActivity(), peliculaList);
+        adaptador = new PaisDetalleListaAdapter(getActivity(), peliculaList);
         //Le pasamos el adaptador al RecyclerView
         recyclerView.setAdapter(adaptador);
 

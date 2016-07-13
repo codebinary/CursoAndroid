@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.james.codebinary.appcato.R;
-import com.james.codebinary.appcato.models.Pelicula;
+import com.james.codebinary.appcato.models.Pais;
 
 import java.util.List;
 
@@ -16,22 +16,22 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by James on 01/07/16.
+ * Created by James on 30/06/16.
  */
-public class PaisDetalleListaAdapters extends RecyclerView.Adapter<PaisDetalleListaAdapters.ViewHolder> {
+public class PaisAdapter extends RecyclerView.Adapter<PaisAdapter.ViewHolder> {
 
     private Context context;
-    private List<Pelicula> listaPeliculas;
+    private List<Pais> listaPaises;
 
-    public PaisDetalleListaAdapters(Context context, List<Pelicula> listaPeliculas) {
+    public PaisAdapter(Context context, List<Pais> listaPaises) {
         this.context = context;
-        this.listaPeliculas = listaPeliculas;
+        this.listaPaises = listaPaises;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_fragmento_list_detalle_pais, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_fragmento_paises, parent, false);
         return new ViewHolder(view);
 
     }
@@ -39,19 +39,19 @@ public class PaisDetalleListaAdapters extends RecyclerView.Adapter<PaisDetalleLi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.pais_detalle_lista.setText(listaPeliculas.get(position).getPelicula_titulo());
+        holder.pais_nombre.setText(listaPaises.get(position).getPais_nombre());
 
     }
 
     @Override
     public int getItemCount() {
-        return listaPeliculas.size();
+        return listaPaises.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.pais_detalle_lista)
-        TextView pais_detalle_lista;
+        @BindView(R.id.pais_nombre)
+        TextView pais_nombre;
 
         public ViewHolder(View itemView) {
             super(itemView);

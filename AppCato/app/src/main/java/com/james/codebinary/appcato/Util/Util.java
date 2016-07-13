@@ -13,4 +13,7 @@ public class Util {
     public static final String URL_PARAM_SECCIONES = "null";
     public static final String URL_PARAM_SEDES = "null";
     public static final String URL_PARAM_TITLE = "null";
+
+    //URL para secciones
+    public static final String URL_LIST_TYPE = "list_type/";
 }

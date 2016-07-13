@@ -5,19 +5,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.james.codebinary.appcato.R;
-import com.james.codebinary.appcato.adapters.NovedadAdapters;
+import com.james.codebinary.appcato.adapters.NovedadAdapter;
 import com.james.codebinary.appcato.controllers.AppFestivalSingleton;
 import com.james.codebinary.appcato.models.Novedad;
 
@@ -45,7 +42,7 @@ public class FragmentoNovedad extends Fragment {
     RecyclerView recyclerView;
 
     private LinearLayoutManager linearLayoutManager;
-    private NovedadAdapters adaptador;
+    private NovedadAdapter adaptador;
 
     public FragmentoNovedad() {
 
@@ -63,7 +60,7 @@ public class FragmentoNovedad extends Fragment {
         linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        adaptador = new NovedadAdapters(getActivity(), novedadList);
+        adaptador = new NovedadAdapter(getActivity(), novedadList);
         recyclerView.setAdapter(adaptador);
 
         //Realizamos la peticion con volley

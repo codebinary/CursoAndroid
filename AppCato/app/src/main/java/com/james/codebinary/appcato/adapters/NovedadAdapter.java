@@ -20,13 +20,13 @@ import butterknife.ButterKnife;
 /**
  * Created by James on 28/06/16.
  */
-public class NovedadAdapters extends RecyclerView.Adapter<NovedadAdapters.ViewHolder>{
+public class NovedadAdapter extends RecyclerView.Adapter<NovedadAdapter.ViewHolder>{
 
     private Context context;
     private List<Novedad> listaNovedades;
 
 
-    public NovedadAdapters(Context context, List<Novedad> listaNovedades) {
+    public NovedadAdapter(Context context, List<Novedad> listaNovedades) {
 
         this.context = context;
         this.listaNovedades = listaNovedades;

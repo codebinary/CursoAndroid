@@ -19,7 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.james.codebinary.appcato.R;
-import com.james.codebinary.appcato.adapters.PaisAdapters;
+import com.james.codebinary.appcato.adapters.PaisAdapter;
 import com.james.codebinary.appcato.models.Pais;
 import com.james.codebinary.appcato.view.ClickListener;
 import com.james.codebinary.appcato.view.RecyclerTouchListener;
@@ -46,7 +46,7 @@ public class FragmentoPais extends Fragment {
     RecyclerView recyclerView;
 
     private LinearLayoutManager linearLayoutManager;
-    private PaisAdapters adaptador;
+    private PaisAdapter adaptador;
 
     public FragmentoPais() {
 
@@ -65,7 +65,7 @@ public class FragmentoPais extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         //Inicializamos el adaptador que recibe el contexto de la actividad y la lista
-        adaptador = new PaisAdapters(getActivity(), paisList);
+        adaptador = new PaisAdapter(getActivity(), paisList);
         //Le pasamos el adaptador al RecyclerView
         recyclerView.setAdapter(adaptador);
 
