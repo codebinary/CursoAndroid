@@ -16,7 +16,7 @@ public class Secciones  {
     private String interna_parent;
     private String interna_flag;
 
-    public Secciones() {
+    public Secciones(String sec_name, String sec_items) {
     }
 
     public Secciones(String sec_name) {

@@ -39,6 +39,7 @@ public class ProgramacionAdapter extends RecyclerView.Adapter<ProgramacionAdapte
     public void onBindViewHolder(ProgramacionAdapter.ViewHolder holder, int position) {
 
         holder.sec_name.setText(listaSecciones.get(position).getSec_name());
+        holder.sec_items.setText(listaSecciones.get(position).getCategory_id());
 
     }
 
@@ -51,6 +52,9 @@ public class ProgramacionAdapter extends RecyclerView.Adapter<ProgramacionAdapte
 
         @BindView(R.id.sec_name)
         TextView sec_name;
+
+        @BindView(R.id.sec_items)
+        TextView sec_items;
 
         public ViewHolder(View itemView) {
             super(itemView);

@@ -9,4 +9,8 @@
     <string name="paises">PAISES</string>
     <string name="videos">VIDEOS</string>
     <string name="busqueda">busqueda</string>
+
+
+    <!-- Clave de api key de google maps -->
+    <string name="api_key_maps">AIzaSyCiFjPiaNbjodw08DhM0VvtFgUKeu8zEzw</string>
 </resources>
