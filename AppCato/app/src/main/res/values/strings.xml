@@ -13,4 +13,9 @@
 
     <!-- Clave de api key de google maps -->
     <string name="api_key_maps">AIzaSyCiFjPiaNbjodw08DhM0VvtFgUKeu8zEzw</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Esto es una prueba -->
 </resources>
