@@ -46,6 +46,8 @@ public class FragmentoProgramacion extends Fragment {
     private static final String URL_SECCIONES = "secciones";
     private List<Secciones> seccionesList = new ArrayList<>();
 
+    private List<Secciones> seccionesSubList = new ArrayList<>();
+
     @BindView(R.id.listRecyclerProgramacion)
     RecyclerView recyclerView;
 
@@ -82,19 +84,28 @@ public class FragmentoProgramacion extends Fragment {
                         @Override
                         public void onResponse(JSONObject response) {
                             JSONArray jsonArray = null;
+                            JSONObject objeto = null;
                             try {
                                 jsonArray = response.getJSONArray("secciones");
-                                System.out.print("Tamanio " + jsonArray);
                                 for (int i = 0; i < jsonArray.length(); i++) {
+                                    Secciones objetoSecciones = new Secciones();
                                     try {
-                                        JSONObject objeto = jsonArray.getJSONObject(i);
-                                        Secciones secciones = new Secciones(
-                                                objeto.getString("sec_name"));
-                                        seccionesList.add(secciones);
-                                        System.out.println("Prueba "+ jsonArray);
-                                        Log.d("Secciones: ", seccionesList.toString());
+                                        objeto = jsonArray.getJSONObject(i);
+                                        objetoSecciones.setSec_name(objeto.getString("sec_name"));
+                                        seccionesList.add(objetoSecciones);
                                     } catch (JSONException e) {
                                         e.printStackTrace();
+                                    }
+
+                                    //Con este for recorredemos las sublistas de las secciones
+                                    for (int j = 0; j < objeto.getJSONArray("sec_items").length(); j++){
+                                        Secciones objetoSecciones2 = new Secciones();
+                                        JSONObject objeto2 = objeto.getJSONArray("sec_items").getJSONObject(j);
+                                        //System.out.println(objeto2);
+                                        objetoSecciones2.setCategory_name(objeto2.getString("category_name"));
+                                        objetoSecciones2.setCategory_id(objeto2.getInt("category_id"));
+
+                                        seccionesList.add(objetoSecciones2);
                                     }
                                 }
                             } catch (JSONException e) {
@@ -118,5 +129,25 @@ public class FragmentoProgramacion extends Fragment {
         }
 
         return view;
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity().getApplicationContext(), recyclerView, new ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Toast.makeText(getActivity().getApplicationContext(), "Holaaaa" + seccionesList.get(position).getCategory_id(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
+
+
     }
 }

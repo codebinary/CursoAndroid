@@ -8,9 +8,11 @@
     <!-- Colores principales de la app -->
     <color name="window_background">#FFF5F5F5</color>
 
-    <color name="primaryColor">#465553</color>
+    <color name="primaryColor">#1b938a</color>
     <color name="primaryDarkColor">#465553</color>
     <color name="accentColor">#03A9F4</color>
 
-    <color name="colorNavigation">#2A292A</color>
+    <color name="colorNavigation">#1b938a</color>
+    <color name="color_sec_name">#ff0164</color>
+    <color name="color_sec_items">#1b938a</color>
 </resources>

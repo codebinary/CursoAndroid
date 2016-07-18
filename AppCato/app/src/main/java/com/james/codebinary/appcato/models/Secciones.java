@@ -6,7 +6,7 @@ package com.james.codebinary.appcato.models;
 public class Secciones  {
 
     private String sec_name;
-    private String category_id;
+    private int category_id;
     private String category_slug;
     private String category_name;
     private String category_parent;
@@ -16,25 +16,20 @@ public class Secciones  {
     private String interna_parent;
     private String interna_flag;
 
-    public Secciones(String sec_name, String sec_items) {
+    public Secciones(){
+
+    }
+
+    public Secciones(String sec_name, String category_name, int category_id) {
+        this.sec_name = sec_name;
+        this.category_id = category_id;
+        this.category_name = category_name;
     }
 
     public Secciones(String sec_name) {
         this.sec_name = sec_name;
     }
 
-    public Secciones(String sec_name, String category_id, String category_slug, String category_name, String category_parent, String interna_id, String interna_name, String interna_slug, String interna_parent, String interna_flag) {
-        this.sec_name = sec_name;
-        this.category_id = category_id;
-        this.category_slug = category_slug;
-        this.category_name = category_name;
-        this.category_parent = category_parent;
-        this.interna_id = interna_id;
-        this.interna_name = interna_name;
-        this.interna_slug = interna_slug;
-        this.interna_parent = interna_parent;
-        this.interna_flag = interna_flag;
-    }
 
 
     public String getSec_name() {
@@ -45,11 +40,11 @@ public class Secciones  {
         this.sec_name = sec_name;
     }
 
-    public String getCategory_id() {
+    public int getCategory_id() {
         return category_id;
     }
 
-    public void setCategory_id(String category_id) {
+    public void setCategory_id(int category_id) {
         this.category_id = category_id;
     }
 

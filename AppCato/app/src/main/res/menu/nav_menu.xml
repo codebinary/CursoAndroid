@@ -13,8 +13,7 @@
             android:id="@+id/nav_novedades"
             android:checked="true"
             android:icon="@drawable/ic_file_document"
-            android:title="@string/novedades"
-            />
+            android:title="@string/novedades" />
 
         <item
             android:id="@+id/nav_calendario"

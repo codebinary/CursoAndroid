@@ -39,7 +39,8 @@ public class ProgramacionAdapter extends RecyclerView.Adapter<ProgramacionAdapte
     public void onBindViewHolder(ProgramacionAdapter.ViewHolder holder, int position) {
 
         holder.sec_name.setText(listaSecciones.get(position).getSec_name());
-        holder.sec_items.setText(listaSecciones.get(position).getCategory_id());
+        holder.sec_items.setText(listaSecciones.get(position).getCategory_name());
+
 
     }
 
@@ -60,6 +61,7 @@ public class ProgramacionAdapter extends RecyclerView.Adapter<ProgramacionAdapte
             super(itemView);
 
             ButterKnife.bind(this, itemView);
+
         }
     }
 }
