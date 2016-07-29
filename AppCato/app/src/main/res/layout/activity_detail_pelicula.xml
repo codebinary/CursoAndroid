@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <!-- Toolbar -->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:padding="@dimen/activity_vertical_margin"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_pe"
+            android:text="asdasdsadsadads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <ImageView
+            android:id="@+id/img_pe"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:padding="@dimen/activity_vertical_margin"
+            android:src="@drawable/material_background3"
+            />
+
+        <TextView
+            android:id="@+id/descrip_pe"
+            android:layout_width="match_parent"
+            android:text="asdadsasadsadsadsads"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/item_descripcion"/>
+
+
+        <TextView
+            android:id="@+id/director_pe"
+            android:text="dasdsadsasadsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/item_descripcion"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

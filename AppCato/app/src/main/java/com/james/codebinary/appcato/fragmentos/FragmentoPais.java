@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.james.codebinary.appcato.R;
+import com.james.codebinary.appcato.Util.Util;
 import com.james.codebinary.appcato.adapters.PaisAdapter;
 import com.james.codebinary.appcato.models.Pais;
 import com.james.codebinary.appcato.view.ClickListener;
@@ -39,7 +40,7 @@ import butterknife.ButterKnife;
  */
 public class FragmentoPais extends Fragment {
 
-    private static final String URL_BASE_PAIS = "http://www.festivaldelima.com/2015/api/index.php/list_type/pais";
+    private static final String URL_BASE_PAIS = "list_type/pais";
     private List<Pais> paisList = new ArrayList<>();
 
     @BindView(R.id.listRecyclerPaises)
@@ -74,7 +75,7 @@ public class FragmentoPais extends Fragment {
 
             //Realizamos la peticion con volley
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET,
-                    URL_BASE_PAIS,
+                    Util.URL_BASE + URL_BASE_PAIS ,
                     null,
                     new Response.Listener<JSONObject>() {
                         @Override
@@ -87,8 +88,8 @@ public class FragmentoPais extends Fragment {
                                     try {
                                         JSONObject objeto = jsonArray.getJSONObject(i);
                                         Pais pais = new Pais(
-                                                objeto.getInt("category_id"),
-                                                objeto.getString("category_name"));
+                                                Integer.valueOf(objeto.getInt("category_id")),
+                                                String.valueOf(objeto.getString("category_name")));
                                         paisList.add(pais);
                                         Log.d("Pais: ", paisList.toString());
                                     } catch (JSONException e) {
@@ -132,35 +133,16 @@ public class FragmentoPais extends Fragment {
                 bundle.putInt("idPais", id_pais);
                 FragmentoPaisDetalleLista fdl = new FragmentoPaisDetalleLista();
                 fdl.setArguments(bundle);
-                switch (id_pais){
-                    case 9:case 11:case 432:case 433:case 434:case 435:case 436:case 438:case 439:case 440:
-                    case 479:case 480:case 481:case 482:case 483:case 484:case 485:case 488:case 489:case 503:
-                    case 504:case 505:case 506:case 507:case 508:case 509:case 510:case 511:case 512:case 513:
-                    case 514:case 515:case 520:case 521:case 524:case 525:case 526:case 536:case 553:case 581:
-                        //fragmentoPaisDetalleLista.setArguments(bundle);
 
-                        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                        fragmentTransaction.replace(R.id.main_content, fdl);
+                //fragmentoPaisDetalleLista.setArguments(bundle);
 
-                        fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                        fragmentTransaction.addToBackStack(null);
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_content, fdl);
 
-                        fragmentTransaction.commit();
+                fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                fragmentTransaction.addToBackStack(null);
 
-
-                        break;
-                }
-
-                /*if(paisList.get(position).getPais_id() == 9){
-                    FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.main_content, new FragmentoPaisDetalleLista());
-
-                    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                    fragmentTransaction.addToBackStack(null);
-
-                    fragmentTransaction.commit();
-                }*/
-                //Toast.makeText(getActivity().getApplicationContext(), "Holaaaa" + paisList.get(position).getPais_id(), Toast.LENGTH_SHORT).show();
+                fragmentTransaction.commit();
             }
 
             @Override

@@ -5,7 +5,7 @@ package com.james.codebinary.appcato.Util;
  */
 public class Util {
 
-    public static final String URL_BASE = "http://www.festivaldelima.com/2015/api/index.php/";
+    public static final String URL_BASE = "http://www.festivaldelima.com/2016/api/index.php/";
 
     //URL para FragmentoPaisDetalle
     public static final String URL_LIST_MOVIES = "list_movies";

@@ -1,6 +1,7 @@
 package com.james.codebinary.appcato.fragmentos;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,16 +11,21 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.james.codebinary.appcato.DetailPeliActivity;
+import com.james.codebinary.appcato.MainActivity;
 import com.james.codebinary.appcato.R;
 import com.james.codebinary.appcato.Util.Util;
 import com.james.codebinary.appcato.adapters.PaisDetalleListaAdapter;
 import com.james.codebinary.appcato.controllers.AppFestivalSingleton;
 import com.james.codebinary.appcato.models.Pelicula;
+import com.james.codebinary.appcato.view.ClickListener;
+import com.james.codebinary.appcato.view.RecyclerTouchListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -125,5 +131,34 @@ public class FragmentoPaisDetalleLista extends Fragment {
         }
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        recyclerView.addOnItemTouchListener(new RecyclerTouchListener(getActivity().getApplicationContext(), recyclerView, new ClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+
+
+                Intent intent = new Intent(getActivity(), DetailPeliActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+                intent.putExtra("post_id", peliculaList.get(position).getPelicula_id());
+
+                //startActivity(new Intent(getContext(), DetailPeliActivity.class)
+                 //               .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP));
+                startActivity(intent);
+
+
+                //Toast.makeText(getActivity().getApplicationContext(), "Holaaaa" + peliculaList.get(position).getPelicula_id(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onLongClick(View view, int position) {
+
+            }
+        }));
     }
 }

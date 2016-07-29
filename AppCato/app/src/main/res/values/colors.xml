@@ -9,7 +9,7 @@
     <color name="window_background">#FFF5F5F5</color>
 
     <color name="primaryColor">#1b938a</color>
-    <color name="primaryDarkColor">#465553</color>
+    <color name="primaryDarkColor">#1b938a</color>
     <color name="accentColor">#03A9F4</color>
 
     <color name="colorNavigation">#1b938a</color>
