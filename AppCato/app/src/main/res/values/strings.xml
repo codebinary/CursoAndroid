@@ -14,8 +14,12 @@
     <!-- Clave de api key de google maps -->
     <string name="api_key_maps">AIzaSyCiFjPiaNbjodw08DhM0VvtFgUKeu8zEzw</string>
 
+    <!-- Clave de api key de youtube -->
+    <string name="api_key_youtube">AIzaSyAkGu10t3H_5VqI0k972nb7AaZ6xKSpxGw</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textCalendar">Calendario</string>
 
     <!-- Esto es una prueba -->
 </resources>

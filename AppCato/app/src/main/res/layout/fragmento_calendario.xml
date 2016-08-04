@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/txtCalendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/calendario"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        />
+        android:text="@string/textCalendar"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/txt2Calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CalendarView Date Display"
+        android:textAppearance="?android:attr/textAppearanceLarge"/>
+
 </LinearLayout>

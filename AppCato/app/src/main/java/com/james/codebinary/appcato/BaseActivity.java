@@ -4,6 +4,8 @@ import android.support.annotation.LayoutRes;
 import android.support.v7.app.AppCompatActivity;
 
 
+import com.google.android.youtube.player.YouTubeBaseActivity;
+
 import butterknife.ButterKnife;
 
 /**
